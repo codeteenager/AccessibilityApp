@@ -8,4 +8,4 @@
     android:accessibilityFlags="flagDefault"
     android:canRetrieveWindowContent="true"
     android:notificationTimeout="100"
-    android:packageNames="com.android.packageinstaller"/>
+    android:packageNames="com.android.packageinstaller,com.google.android.packageinstaller,com.samsung.android.packageinstaller,com.lenovo.safecenter,com.lenovo.security,com.xiaomi.gamecenter"/>

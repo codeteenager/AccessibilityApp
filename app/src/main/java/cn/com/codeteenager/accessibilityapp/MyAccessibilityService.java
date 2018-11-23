@@ -11,7 +11,7 @@ import java.util.List;
 public class MyAccessibilityService extends AccessibilityService {
 
     private final String INSTALL_AND_UNINSTALL = "com.android.packageinstaller";
-    private String[] key = new String[]{"卸载", "下一步", "安装", "继续", "完成"};
+    private String[] key = new String[]{"卸载", "安装", "继续", "继续安装", "替换", "下一步", "仅允许一次", "完成", "确定"};
 
     /**
      * 当服务连接成功时
@@ -39,7 +39,7 @@ public class MyAccessibilityService extends AccessibilityService {
             switch (event.getPackageName().toString()) {
                 case INSTALL_AND_UNINSTALL:
                     for (int i = 0; i < key.length; i++) {
-                        AccessibilityNodeInfo nodeInfo = event.getSource();
+                        AccessibilityNodeInfo nodeInfo = getRootInActiveWindow();
                         if (nodeInfo != null) {
                             List<AccessibilityNodeInfo> nodes = nodeInfo.findAccessibilityNodeInfosByText(key[i]);
                             System.out.println("节点的个数" + nodes.size());
