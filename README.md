@@ -1,7 +1,20 @@
-## 无障碍实现静默安装和静默卸载
-实现无障碍功能首先要继承AccessibilityService类，有三个方法可用，onServiceConnected()(当系统成功启动服务时调用，可用于对服务进行配置或弹出提示信息)、onAccessibilityEvent(AccessibilityEvent event)(当指定事件出发该服务时调用，用于实现事件处理的业务逻辑模块)、onInterrupt()(终止accessibility service时调用)。
-功能实现主要用到AccessibilityNodeInfo、AccessibilityEvent。AccessibilityEvent封装了所有用户触发的事件，AccessibilityNodeInfo则封装了当前状态视图的属性，即当前状态视图组件以树的形式构建。
+## AccessibilityService
+AccessibilityService是用户可选服务，AccessibilityService由系统在后台运行,并接收回调函数AccessibilityEvents。此类事件表示一些状态转换的用户界面,
+例如,界面已经改变, 点击一个按钮,等等。这种服务可以选择请求的能力查询活动窗口的内容。
+开发一个可访问性服务需要扩展这个类并实现其抽象方法。
 
+AccessibilityService由AccessibilityServiceInfo来描述。
+系统通知的AccessibilityService, AccessibilityEvents的节点信息封装在这个类中。
+
+## 用法
++ onServiceConnected():服务连接时，也就是第一次打开时调用，这里我们可以初始化常量和标签等
++ onCreate():服务创建时调用，初始化一些数据
++ onDestroy():服务消亡是，或者用户关闭时，调用，这里我们可以去做些业务相关的释放任务，
++ onAccessibilityEvent():监测到内容节点时调用
++ disableSelf():自身关闭时主动调用
++ onInterrupt():终止accessibility service时调用。
+
+## 相关配置
 在AndroidManifest.xml文件中声明AccessibilityService时，有如下几点必须注意：
 + android:name属性为自定义MyAccessibilityService的绝对类名；
 + 声明"android.permission.BIND_ACCESSIBILITY_SERVICE"权限;
