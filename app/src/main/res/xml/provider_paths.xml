@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--"."表示所有路径-->
+    <external-path
+        name="external_files"
+        path="." />
+    <!--填写自己的包名-->
+    <external-path
+        name="share_files_path"
+        path="Android/data/cn.com.codeteenager.accessibilityapp/" />
+    <external-path
+        name="root_path"
+        path="." />
+</paths>

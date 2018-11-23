@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">智能应用助手</string>
+    <string name="app_accessibility_description">"智能安装和卸载服务，无需用户的任何操作就可以自动安装程序。"</string>
+</resources>

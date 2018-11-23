@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_check_permission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="检查权限" />
+
+    <Button
+        android:id="@+id/btn_install"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="静默安装" />
+
+    <Button
+        android:id="@+id/btn_uninstall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="静默卸载" />
+
+</LinearLayout>
